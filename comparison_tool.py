@@ -251,7 +251,7 @@ def main():
             
             submitted = st.form_submit_button(
                 "✅ Submit My Experience — Join the Community",
-                use_container_width=True,
+                width="stretch",
                 type="primary"
             )
             
@@ -326,7 +326,7 @@ def main():
             key="location"
         )
     
-    if st.button("🔍 Find My Best Match", type="primary", use_container_width=True):
+    if st.button("🔍 Find My Best Match", type="primary", width="stretch"):
         st.markdown("---")
         
         # Simple recommendation logic
@@ -388,7 +388,7 @@ def main():
         else:
             affiliate_link = "https://www.btc.bw"  # Replace with actual affiliate link
         
-        if st.button(f"📱 Get {recommended} Now", type="primary", use_container_width=True, key="cta_main"):
+        if st.button(f"📱 Get {recommended} Now", type="primary", width="stretch", key="cta_main"):
             
             # ✅ SAVE LEAD TO AIRTABLE
             if airtable and user_email:
@@ -441,7 +441,7 @@ def main():
         'Reviews': [f"{networks_data[n]['users']:,}" for n in ['Orange', 'Mascom', 'BTC']],
     })
     
-    st.dataframe(comparison_df, use_container_width=True, hide_index=True)
+    st.dataframe(comparison_df, width="stretch", hide_index=True)
     
     # Detailed network cards
     st.markdown("### Detailed Breakdown")
@@ -476,7 +476,7 @@ def main():
             st.write(f"**{data['users']:,}** verified reviews")
             
             # ✅ Affiliate CTA button with tracking
-            if st.button(f"Choose {network}", key=f"choose_{network}", use_container_width=True):
+            if st.button(f"Choose {network}", key=f"choose_{network}", width="stretch"):
                 
                 # Track the click
                 if airtable:
@@ -525,7 +525,7 @@ def main():
     with col1:
         email = st.text_input("Enter your email", placeholder="your@email.com", label_visibility="collapsed", key="newsletter_email")
     with col2:
-        if st.button("Subscribe", use_container_width=True, key="newsletter_btn"):
+        if st.button("Subscribe", width="stretch", key="newsletter_btn"):
             if email:
                 # ✅ SAVE TO AIRTABLE
                 if airtable:
