@@ -1,2 +1,2 @@
 # botswana-network-comparison
-botswana network comparison
+Mobile network comparison tool for Botswana
